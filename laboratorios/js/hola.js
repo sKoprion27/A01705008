@@ -36,13 +36,22 @@ menu.push({nombre: 'El Tacoshino', precio: 29});
 
 console.log(menu);
 
-const calcular_cuenta = (tacos) =>{
-    return tacos*22;
+window.alert('bienvenido a Tacoshinos');
+
+
+const ordenar = window.confirm('¿desea ordenar?');
+
+if(ordenar){
+    
+    const tacos = window.prompt('¿cuantos tacos vas a querer?')
+
+    const calcular_cuenta = (tacos) => tacos*22;
+    console.log(' la cuenta es de : $' + calcular_cuenta(tacos) );
+
+    console.assert(calcular_cuenta(1) === 22);
+    console.assert(calcular_cuenta(2) === 44);
+
 }
-
-console.log(' la cuenta es de : $' + calcular_cuenta(7) );
-
-
 
 
 
