@@ -1,0 +1,25 @@
+¿Qué diferencias y semejanzas hay entre Java y JavaScript?
+    todas, lo unico que comparten es el nombre
+¿Qué métodos tiene el objeto Date? (Menciona al menos 5*)
+
+¿Qué métodos tienen los arreglos? (Menciona al menos 5*)
+
+¿Cómo se declara una variable con alcance local dentro de una función?
+
+¿Qué implicaciones tiene utilizar variables globales dentro de funciones?
+
+¿Qué método de String se puede utilizar para buscar patrones con expresiones regulares?
+
+¿Para qué podrías utilizar esto en una aplicación web?
+
+JavaScript
+    Tipos de dato 
+        number 
+        String
+        bool < True, False
+    es un lenguaje no tipado, el tipo de varialba se puede cambiar, solo hace el cast
+    console.log("Hola, mundo") imprime en la consola
+    console.warn("cuidado") muestra el aviso en consola 
+    console.error("error") muestra el error en consola
+
+
