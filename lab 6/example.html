@@ -1,35 +1,46 @@
-<!DOCTYPE html>
-<html>
+ <!DOCTYPE html>
+ <html lang="en">
 
-<head>
-    <title>Log in</title>
-</head>
+ <head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Música</title>
+     <link rel="stylesheet" href="css/main.min.css">
+ </head>
 
-<body>
-    <h1>Ingresa tu usuario y contraseña</h1>
+ <body>
+     <header>
+         <h1>DAW y BD</h1>
+     </header>
+     <main>
+         <section id="canciones_favoritas">
+             <h1>Mis canciones favoritas</h1>
+             <ul>
+                 <li id="fav_piedras"></li>
+                 <li id="fav_like" style="cursor: pointer;"></li>
+                 <li id="fav_lobo" style="cursor: pointer;"></li>
+                 <li id="fav_musica"></li>
+                 <li id="fav_rolling"></li>
+             </ul>
+         </section>
+         <section id="lista_canciones">
+             <h1>Canciones disponibles</h1>
+             <ul>
+                 <li id="c_piedras">Piedras rodantes <button id="btn_piedras" onclick="fav_piedras()">Agregar a
+                         favoritos</button></li>
+                 <li id="c_like" onclick="fav_like()" style="cursor: pointer;">Like a stone</li>
+                 <li id="c_lobo" style="cursor: pointer;">Lobo domesticado</li>
+                 <li id="c_musica">Música ligera</li>
+                 <li id="c_rolling">Like a rolling stone</li>
+             </ul>
+         </section>
 
-    <label for="usuario">Usuario:</label>
-    <input type="text" id="usuario" name="usuario"><br><br>
+     </main>
+     <footer class="fondo_amarillo">
+         D.R. DAW y BD Generación febrero-junio 2021
+     </footer>
+     <script src="js/poe.js"></script>
+ </body>
 
-
-    <label for="password">Contraseña:</label>
-    <input type="text" id="password" name="password"><br><br>
-
-    <ul id="myList">
-        <li> mis canciones favoritas</li>
-        <li id="c_piedras"></li>
-    </ul>
-
-    <ul>
-        <li id="c_piedras"> Piedras<button ind="btn_poedras" onclick="fav_piedras()">agregar a favoritos</button></li>
-        <li id="c_lie" onclick="fav_like()">like a stone</li>
-        <li  onclick="fav_like()">lobo domesticado</li>
-        <li onclick="fav_like()">musica ligera</li>
-
-    </ul>
-
-
-    <script scr="js/master.js"></script>
-</body>
-
-</html>
+ </html>
