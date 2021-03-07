@@ -1,18 +1,81 @@
 <!doctype html>
 <html lang="en">
-    <head>
-        <title>lab 5 parte 1</title>
-    </head>
 
-    <body>
-        <h1> lab 5 parte 1</h1>
+<head>
+    <title>lab 5 parte 1</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 
-        <button onclick="alerta1()">ejercicio 1</button>
-        <button onclick="alerta2()">ejercicio 2</button>
-        <button onclick="alerta1()">ejercicio 3</button>
-        <button onclick="alerta1()">ejercicio 4</button>
+</head>
 
-        <script src="js/hola.js"></script>
-    </body>
+<body>
+
+    <div class="panel panel-default">
+        <div class="panel-heading">lab 5 parte practica</div>
+        <div class="panel-body">
+            <div class="btn-group">
+                <button type="button" onclick="alerta1()" class="btn btn-primary">ejercicio 1</button>
+                <button type="button" onclick="alerta2()" class="btn btn-primary">ejercicio 2</button>
+                <button type="button" onclick="alerta3()" class="btn btn-primary">ejercicio 3</button>
+                <button type="button" onclick="alerta4()" class="btn btn-primary">ejercicio 4</button>
+                <button type="button" onclick="inverso()" class="btn btn-primary">ejercicio 5</button>
+                <button type="button" onclick="alerta6()" class="btn btn-primary">ejercicio 6</button>
+            </div>
+        </div>
+    </div>
+
+    <button data-toggle="collapse" data-target="#p1">¿Qué diferencias y semejanzas hay entre Java y
+        JavaScript?</button>
+    <div id="p1" class="collapse">
+        1. Solo presentan similitud en el nombre
+    </div>
+    <br>
+    <button data-toggle="collapse" data-target="#p2">¿Qué métodos tiene el objeto Date?</button>
+    <div id="p2" class="collapse">
+        1. Solo presentan similitud en el nombre
+    </div>
+    <br>
+    <button data-toggle="collapse" data-target="#p3">¿Qué métodos tienen los arreglos?</button>
+    <div id="p3" class="collapse">
+        1. Solo presentan similitud en el nombre
+    </div>
+    <br>
+    <button data-toggle="collapse" data-target="#p4">¿Cómo se declara una variable con alcance local
+        dentro de una función?</button>
+    <div id="p4" class="collapse">
+        1. Solo presentan similitud en el nombre
+    </div>
+    <br>
+    <button data-toggle="collapse" data-target="#p5">¿Qué implicaciones tiene utilizar variables globales
+        dentro de funciones? </button>
+    <div id="p5" class="collapse">
+        1. Solo presentan similitud en el nombre
+    </div>
+    <br>
+    <button data-toggle="collapse" data-target="#p6">¿Qué método de String se puede utilizar para buscar
+        patrones con expresiones regulares?</button>
+    <div id="p6" class="collapse">
+        1. Solo presentan similitud en el nombre
+    </div>
+    <br>
+    <button data-toggle="collapse" data-target="#p7">Para qué podrías utilizar esto en una aplicación
+        web?</button>
+    <div id="p7" class="collapse">
+        1. Solo presentan similitud en el nombre
+    </div>
+    <br>
+
+
+    <div id="p2" class="collapse">
+        2. Solo presentan similitd en el nombre
+    </div>
+
+
+
+    <script src="js/hola.js"></script>
+</body>
 
 </html>
