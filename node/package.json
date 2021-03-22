@@ -1,0 +1,19 @@
+{
+  "name": "a01705008",
+  "version": "1.0.0",
+  "description": "seciones de clase de daw de A01705008",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sKoprion27/A01705008.git"
+  },
+  "author": "Julio Ramirez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sKoprion27/A01705008/issues"
+  },
+  "homepage": "https://github.com/sKoprion27/A01705008#readme"
+}
