@@ -34,3 +34,7 @@ a {
     color: #29ee0b;
   }
 
+  li{
+      margin-top: 1em;
+      padding-top: 1em;
+  }
