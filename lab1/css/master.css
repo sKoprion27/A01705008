@@ -14,16 +14,23 @@ h2 {
 
 h1,
 h2,
+h3,
 strong {
-    color: #333;
+    color: #1b9608;
 }
 
-p {
+p{
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+p,
+ul {
     padding: 1em;
     background: #eee;
 }
 
 a {
-    color: #e81c4f;
+    color: #29ee0b;
   }
 
