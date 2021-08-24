@@ -73,7 +73,7 @@ function agregaItem(item){
     // se agrega el item al arreglo arr
     arr.push(item);
     // se agrega el item al div
-    document.getElementById("mydiv").innerHTML += item + " " 
+    document.getElementById("displayArr").innerHTML += item + " " 
 }
 
 
