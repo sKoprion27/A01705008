@@ -14,19 +14,30 @@
 </head>
 
 <body>
-    <div class="btn-group" role="group" aria-label="Basic example">
-        <button type="button" class="btn btn-secondary" onclick="Entrada1()">1</button>
-        <button type="button" class="btn btn-secondary" onclick="Entrada2()">2</button>
-        <button type="button" class="btn btn-secondary" onclick="Entrada3()">3</button>
-        <button type="button" class="btn btn-secondary" onclick="Entrada4()">4</button>
-        <button type="button" class="btn btn-secondary" onclick="Entrada5()">5</button>
-        <buExtraton type="button" class="btn btn-secondary" onclick="EntradaExtra()">Extra</buExtraton>
-        <button type="button" class="btn btn-secondary" onclick="showPreguntas()">Preguntas</button>
+    <div class="m-3">
+        <div class="btn-group" role="group" aria-label="Basic example">
+            <button type="button" class="btn btn-secondary" onclick="Entrada1()">1</button>
+            <button type="button" class="btn btn-secondary" onclick="Entrada2()">2</button>
+            <button type="button" class="btn btn-secondary" onclick="Entrada3()">3</button>
+            <button type="button" class="btn btn-secondary" onclick="Entrada4()">4</button>
+            <button type="button" class="btn btn-secondary" onclick="Entrada5()">5</button>
+            <buExtraton type="button" class="btn btn-secondary" onclick="EntradaExtra()">Extra</buExtraton>
+            <button type="button" class="btn btn-secondary" onclick="showPreguntas()">Preguntas</button>
+        </div>
     </div>
 
 
-    <div id="Entrada3">
-
+    <div id="Entrada3" style="display: none;">
+        <!-- botones con label -->
+        <div class="btn-group ml-3" role="group" aria-label="Button group with nested dropdown">
+            <button type="button" class="btn btn-secondary" onclick="agregaItem(numAgregado.value)">Agregar</button>
+            
+            <input id="numAgregado" type="number" class="form-control" placeholder="Introduce un numero" >            
+            <button type="button" class="btn btn-secondary" onclick="cuentaArreglos()">Calcular</button>
+        </div>
+        <!-- display del array -->
+        <div  class="ml-3"id="mydiv">
+        </div>
     </div>
 
     <div id="preguntas" style="display: none;">
@@ -34,19 +45,33 @@
         <hr>
         <ol>
             <li>¿Qué diferencias y semejanzas hay entre Java y JavaScript?</li>
-            <p>semejanzas solo el nombre</p>
+            <p>semejanzas solo el nombre y difencia todo lo demas</p>
             <li>¿Qué métodos tiene el objeto Date? (Menciona al menos 5*)</li>
-            <p>respuesta</p>
+            <ul>
+                <li>getDate() Devuelve el día del mes. Número entre 1 y 31</li>
+                <li>getDay() Devuelve el día de la semana. Entre 0 (domingo) y 6 (sábado)</li>
+                <li>getFullYear() Devuelve el año con 4 dígitos</li>
+                <li>getMilliseconds() Devuelve los milisegundos entre 0 y 9999</li>
+                <li>getMinutes() Devuelve los minutos. Entre 0 y 59</li>
+            </ul>
+            <br>
             <li>¿Qué métodos tienen los arreglos? (Menciona al menos 5*)</li>
-            <p>respuesta</p>
+            <ul>
+                <li>Método pop() Este método elimina el último elemento del array. </li>
+                <li>Método push() Este método añadiría nuevos valores al final del array.</li>
+                <li>Método shift() Elimina el primer valor del array. </li>
+                <li>Método unshift() añade al principio del array estas dos ciudades </li>
+                <li>Método splice() Insertar y/o eliminar elementos en cualquier parte del array.</li>
+            </ul>
+            <br>
             <li>¿Cómo se declara una variable con alcance local dentro de una función?</li>
             <p>let nombreVariable;</p>
             <li>¿Qué implicaciones tiene utilizar variables globales dentro de funciones?</li>
-            <p>respuesta</p>
+            <p>De que la variable se va a poder ocupar fuera de la funcion</p>
             <li>¿Qué método de String se puede utilizar para buscar patrones con expresiones regulares?</li>
             <p>respuesta</p>
             <li>¿Para qué podrías utilizar esto en una aplicación web?</li>
-            <p>respuesta</p>
+            <p>Para definir toda la logica detras de las interacciones del usuario con el front-end</p>
         </ol>
     </div>
 
