@@ -13,8 +13,8 @@
     <title>Laboratorio 5 JavaScript </title>
 </head>
 
-<body>
-    <div class="m-3">
+<body class="ml-3">
+    <div class="my-3">
         <div class="btn-group" role="group" aria-label="Basic example">
             <button type="button" class="btn btn-secondary" onclick="Entrada1()">1</button>
             <button type="button" class="btn btn-secondary" onclick="Entrada2()">2</button>
@@ -29,19 +29,19 @@
 
     <div id="Entrada3" style="display: none;">
         <!-- botones con label -->
-        <div class="btn-group ml-3 mb-2" role="group" aria-label="Button group with nested dropdown">
+        <div class="btn-group mb-2" role="group" aria-label="Button group with nested dropdown">
             <button type="button" class="btn btn-secondary" onclick="agregaItem(numAgregado.value)">Agregar</button>
 
             <input id="numAgregado" type="number" class="form-control" placeholder="Introduce un numero">
             <button type="button" class="btn btn-secondary" onclick="cuentaArreglos()">Calcular</button>
         </div>
         <!-- display del array -->
-        <div class="ml-3" id="displayArr">
+        <div  id="displayArr">
             El arreglo contiene:
         </div>
     </div>
 
-    <div class="ml-3" id="Entrada4" style="display: block;">
+    <div class="" id="Entrada4" style="display: none;">
         <div class="btn-toolbar mb-3" role="toolbar" aria-label="Toolbar with button groups">
             <div class="btn-group mr-2" role="group" aria-label="First group">
                 <button type="button" class="btn btn-secondary"
@@ -88,6 +88,19 @@
         </div>
 
 
+    </div>
+
+    <div id="Entrada5" >
+        <div class="btn-toolbar  mb-3" role="toolbar" aria-label="Toolbar with button groups">
+            <div class="input-group">
+                <input id="inputNum"type="number" class="form-control" placeholder="Introduce el número" aria-label="Input group example" aria-describedby="btnGroupAddon">
+                <button type="button" class="btn btn-secondary" onclick="InvertirNum(inputNum.value)">Invertir</button>
+            </div>
+          </div>
+
+          <div id="displayReverse">
+          </div>
+          
     </div>
 
     <div id="preguntas" style="display: none;">

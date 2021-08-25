@@ -130,10 +130,28 @@ function Promedios(){
 
 
 
+// Función: inverso. Parámetros: Un número. 
+// Regresa: El número con sus dígitos en orden inverso.
 
 function Entrada5() {
-    // Función: inverso. Parámetros: Un número. 
-    // Regresa: El número con sus dígitos en orden inverso.
+    var x = document.getElementById("Entrada5");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    } 
+}
+
+function InvertirNum(numero) {
+    document.getElementById("displayReverse").innerHTML = "El número invertido :  "
+    var invertido = 0
+    var resto = numero
+    do {
+        invertido = invertido * 10 + (resto % 10)
+        resto = Math.floor(resto / 10)
+    } while ( resto > 0 )
+    
+    document.getElementById("displayReverse").innerHTML += invertido;
 }
 
 function EntradaExtra() {
