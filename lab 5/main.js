@@ -29,7 +29,7 @@ function Entrada2() {
     let t1 = performance.now();
     // se resta del tiempo al finalizar el tiempo al iniciar y se conviernte de milisegundos a segundos
     let totaltime = (t1 - t0) * 0.001;
-    if (respuesta == (randomNum1 + randomNum2)) {
+    if (respuesta == (randomNum1 + randomNum2) ) {
         // toFixed para limitar la cantidad de decimales
         alert("La respuesta " + respuesta + " es correcta, se respondio en " + totaltime.toFixed(2) + " seg");
     } else {
@@ -76,12 +76,60 @@ function agregaItem(item){
     document.getElementById("displayArr").innerHTML += item + " " 
 }
 
-
+var calificaciones=[[],[],[]];
+// Función: promedios. Parámetros: Un arreglo de arreglos de números. 
+// Regresa: Un arreglo con los promedios de cada uno de los renglones de la matriz.
 
 function Entrada4() {
-    // Función: promedios. Parámetros: Un arreglo de arreglos de números. 
-    // Regresa: Un arreglo con los promedios de cada uno de los renglones de la matriz.
+    var x = document.getElementById("Entrada4");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }    
 }
+
+function agregarCalf( calificacion){
+    let index = document.querySelector('input[name="Radios"]:checked').value
+    if(calificacion < 0){
+        alert("Por favor introduce un numero positivo")
+    }else{
+        calificaciones[index].push(calificacion);
+        switch(index){
+            case '0':
+            document.getElementById("Ricardo").innerHTML += calificaciones[index][calificaciones[index].length-1] + " "
+            break;
+            case '1':
+            document.getElementById("Eduardo").innerHTML += calificaciones[index][calificaciones[index].length-1] + " "
+            break;
+            case '2':
+            document.getElementById("Julio").innerHTML += calificaciones[index][calificaciones[index].length-1] + " "
+            break;
+            default:
+            // console.log(`no entro | index: ${index}.`);
+        }
+    }
+}
+
+function Promedios(){
+    for (let i = 0; i < calificaciones.length; i++) {
+        // console.log(calificaciones[i]);
+        for (let j = 0; j < calificaciones[i].length; j++) {
+            console.log("i: " + i);
+            console.log("j: " + j);
+            var acum =0;
+            console.log("arreglo " + calificaciones[i][j]);
+            console.log("acum antes del sum "+ acum)
+            acum += calificaciones[i][j];
+            console.log("acum despues del sum "+ acum)
+        }
+        console.log("acum afuera "+acum)
+        console.log("-------------------")
+     }
+}
+
+
+
 
 function Entrada5() {
     // Función: inverso. Parámetros: Un número. 
