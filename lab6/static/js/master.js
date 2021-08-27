@@ -12,41 +12,42 @@ function equivalenciaPassword(password1, password2){
 }
 
 function ComprobarPassword(password){
-    let flagnumeros = 0;
-    let flagmayusculas = 0;
-    let flagminusculas = 0;
-    let flagcaracteresEspeciales = 0;
-    let flaglongitud = 0;
-    let flagespacio = 1;
-    let caracteresEspeciales = [33,35,36,40,41,42,44,45,46,47,58,59,61,63,64,123,125];
+    var flagnumeros = 0;
+    var flagmayusculas = 0;
+    var flagminusculas = 0;
+    var flagcaracteresEspeciales = 0;
+    var flaglongitud = 0;
+    var flagespacio = 0;
+    // equivalencia en asscii de los caracteres especiales
+    var caracteresEspeciales = [33,35,36,40,41,42,44,45,46,47,58,59,61,63,64,123,125];
+    // comparar caracter por caracter de la contraseña
     for(let i=0; i<password.length; i++){
-        
+        // rango de numeros en asscci
         if(password[i].charCodeAt() <= 57 && password[i].charCodeAt() >= 48){
             flagnumeros = 1;
         }
+        // rango de mayusculas en asscci
         if(password[i].charCodeAt() <= 90 && password[i].charCodeAt() >= 65){
             flagmayusculas = 1;
         }
+        // rango de minuscualas en asscci
         if(password[i].charCodeAt() <= 122 && password[i].charCodeAt() >= 97){
             flagminusculas = 1;
         }
-        console.log(password.length);
+
         if(password.length >=8){
             flaglongitud = 1;
         }
 
-        // console.log("cont: " + password[i]);
-        // console.log("cont: " + password[i].charCodeAt());
         if(password[i].charCodeAt() == 32){
-            flagespacio = 0;
+            flagespacio = 1;
         }
-
-        while (flagcaracteresEspeciales == 0) {
-            let j = 0
-            if(caracteresEspeciales[j] == password[i]){
+// se compara cada uno de los caracteres especiales, con cada letra del password
+        for(let j=0; j <caracteresEspeciales.length; j++){
+            if(caracteresEspeciales[j] === password[i].charCodeAt()){
                 flagcaracteresEspeciales = 1;
+                j = caracteresEspeciales.length;
             }
-
         }
         
         
@@ -57,7 +58,9 @@ function ComprobarPassword(password){
             document.getElementById("numeros").style.color = "green";
         }  
         if (flagmayusculas === 0){
-            document.getElementById("mayusculas").style.color = "green";
+            document.getElementById("mayusculas").style.color = "red";
+        }else{
+            document.getElementById("numeros").style.color = "green";
         }
         if (flagminusculas === 0){
             document.getElementById("minusculas").style.color = "red";
@@ -69,7 +72,7 @@ function ComprobarPassword(password){
         }else{
             document.getElementById("longitud").style.color = "green";
         }
-        if (flagespacio === 0){
+        if (flagespacio === 1){
             document.getElementById("espacio").style.color = "red";
         }else{
             document.getElementById("espacio").style.color = "green";
@@ -80,6 +83,11 @@ function ComprobarPassword(password){
             document.getElementById("caracteresEspeciales").style.color = "green";
         }
 
+        // controlador de la barra de progreso
+        
+        document.getElementById("progressPassword").style.width = "50%";
+
  
     }
 }
+
