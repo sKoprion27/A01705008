@@ -90,10 +90,12 @@ function Entrada4() {
 }
 
 function agregarCalf( calificacion){
+    // se obtiene la informacion de todos los radios llamados Radios
     let index = document.querySelector('input[name="Radios"]:checked').value
     if(calificacion < 0){
         alert("Por favor introduce un numero positivo")
     }else{
+        // se mete la informaion al arreglo, y se muestra en el front-end
         calificaciones[index].push(calificacion);
         switch(index){
             case '0':
@@ -112,19 +114,27 @@ function agregarCalf( calificacion){
 }
 
 function Promedios(){
+    var acum =0;
     for (let i = 0; i < calificaciones.length; i++) {
-        // console.log(calificaciones[i]);
+        // se suman las calificaiones
         for (let j = 0; j < calificaciones[i].length; j++) {
-            console.log("i: " + i);
-            console.log("j: " + j);
-            var acum =0;
-            console.log("arreglo " + calificaciones[i][j]);
-            console.log("acum antes del sum "+ acum)
-            acum += calificaciones[i][j];
-            console.log("acum despues del sum "+ acum)
+            acum += parseInt(calificaciones[i][j]); 
         }
-        console.log("acum afuera "+acum)
-        console.log("-------------------")
+        // se colocan los promedios en el fron-end
+        switch(parseInt(i)){
+            case 0:
+                document.getElementById("Ricardo").innerHTML += " Promedio: " + (acum/calificaciones[i].length) 
+            break;
+            case 1:
+                document.getElementById("Eduardo").innerHTML += " Promedio: " + (acum/calificaciones[i].length) 
+            break;
+            case 2:
+                document.getElementById("Julio").innerHTML += " Promedio: " + (acum/calificaciones[i].length) 
+            break;
+            default:
+            // console.log(`no entro | index: ${i}`);
+        }
+
      }
 }
 
