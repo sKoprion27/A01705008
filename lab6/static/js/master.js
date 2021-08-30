@@ -124,3 +124,34 @@ function print(value){
     console.log(" " + value);
 
 }
+
+Productos = [
+    {
+        name:"Audífonos JBL In-Ear Endurance Run", 
+        price:600.00, 
+        imgUrl:"static/img/ventaJLB.webp", 
+        Cantida: null
+    },
+    {
+        name:"Apple AirPods", 
+        price:5999.00, 
+        imgUrl:"static/img/ventaAplle.webp", 
+        Cantida: null
+    },
+    {
+        name:"Audífonos Sony Inalámbricos WH-CH510", 
+        price:899.00, 
+        imgUrl:"static/img/ventasony.webp", 
+        Cantida: null
+    }
+    
+];
+
+
+function addItem(Nombre, cantidad){
+    console.log("nombre: "+Nombre);
+    const found = Productos.find(element => element == Nombre);
+    console.log("encontrado: " + found);
+    console.log("cantidad: "+ cantidad);
+    
+}
