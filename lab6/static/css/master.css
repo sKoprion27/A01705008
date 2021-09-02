@@ -1,4 +1,13 @@
+/* estilos carrito */
 .imgCarrito{
     max-width: 10%;
     height: auto;
+}
+
+
+
+/* estilos tienda */
+.carruselTamaño{
+    width: auto;
+    height: 10%;    
 }

@@ -125,20 +125,23 @@ function print(value){
 
 }
 
-Productos = [
+ const Productos = [
     {
+        id: 1, 
         name:"Audífonos JBL In-Ear Endurance Run", 
         price:600.00, 
         imgUrl:"static/img/ventaJLB.webp", 
         Cantida: null
     },
     {
+        id: 2, 
         name:"Apple AirPods", 
         price:5999.00, 
         imgUrl:"static/img/ventaAplle.webp", 
         Cantida: null
     },
     {
+        id: 3, 
         name:"Audífonos Sony Inalámbricos WH-CH510", 
         price:899.00, 
         imgUrl:"static/img/ventasony.webp", 
@@ -155,3 +158,4 @@ function addItem(Nombre, cantidad){
     console.log("cantidad: "+ cantidad);
     
 }
+
