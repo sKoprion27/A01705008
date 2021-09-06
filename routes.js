@@ -1,29 +1,11 @@
-//primer programa con node
-
-
-// stringTotxt("gorditas");
-
-// // codigo asincrono
-
-// const arreglo = [3,4,2,300,2000,1500,200,34,12,400,100,3000]
-// function settimeout(arr){
-
-//     for (let item of arr){
-//         setTimeout( () => {
-//             console.log(item);
-//         }, item);
-//     }
-// }
-
-const http = require('http');
-
 const platillos = [
     {nombre:"Sopes", descripcion:"Tortilla, frijol, queso, salsa, pollo"},
     {nombre:"Chilaquiles", descripcion:"Tortilla, salsa, frijor, queso, pollo"},
     {nombre:"Tacos", descripcion:"Tortilla, carne, salsa"},
     {nombre:"pambazo", descripcion:"Bolillo remojado en salsa con carne"},
 ]
-const server = http.createServer((request, response) => {
+
+const requestHandler = (request, response) => {
     
     // reaccionar de acuerdo a la ruta
     if (request.url === "/hola"){
@@ -84,8 +66,7 @@ const server = http.createServer((request, response) => {
             response.setHeader('Location', '/menu');
             response.end();
         })
-
-
+        
     }else{
         response.statusCode = 404;
         response.setHeader('Content-Type', 'text/html');
@@ -93,6 +74,6 @@ const server = http.createServer((request, response) => {
         response.write('<h1>Pag no encontrada</h1>');
 
     }
-}).listen(3000);
+}
 
-// settimeout(arreglo);
+module.exports = requestHandler;
