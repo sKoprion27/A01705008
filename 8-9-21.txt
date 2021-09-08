@@ -1,0 +1,29 @@
+hacer una lista de tareas ocupando tarjetas de bootstrap
+
+model Relacionarl
+
+llave primaria : es un campo que garanatiza unicidad en una relacion.
+
+llave primaria : compuesta : Es el conjunto de campos que garanatizan la unicidad en la relacion.
+
+llave foranea : Es un campo que hace referencia a la relacion con otro campo de otra tabla, generalemte a una llave primaria o en su defecto a parte de ella. Garantiza integridad referencial.
+
+MR
+Grado:
+	Numero de col que tiene una relacion (tabla)
+Cardinalidad:
+	Número de renglones (tuplas)
+	
+Dominio:
+	Tipo de dato
+	
+---------------------------------------------Algebra-----------------------------------------------------------
+
+Operadores 
+
+
+
+
+
+
+
