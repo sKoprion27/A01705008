@@ -4,3 +4,5 @@
 
 
 "start": "nodemon app.js" reconosca todos esos paramatros como script
+
+middleware medidador entre software y hardware
