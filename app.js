@@ -8,14 +8,25 @@ app.use((request, response, next) => {
     next();
 } );
 
-app.use((request, response, next) => {
-    console.log('Segundo middleware!');
-    next(); //Le permite a la petición avanzar hacia el siguiente middleware
+app.use('/ruta/nombres', (request, response, next) => {
+    response.send('Respuesta de la ruta "/ruta/nombres"'); 
+    next();
+});
+
+app.use('/ruta/apellidos', (request, response, next) => {
+    response.send('Respuesta de la ruta "/ruta/apellidos"'); 
+    next();
+});
+
+app.use('/ruta', (request, response, next) => {
+    response.send('Respuesta de la ruta "/ruta"'); 
+    next();
 });
 
 app.use((request, response, next) => {
     console.log('Ultimo middleware!');
     response.send('¡Hola mundo!'); //Manda la respuesta
 });
+        
 
 app.listen(3000);
