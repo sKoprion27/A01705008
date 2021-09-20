@@ -110,18 +110,21 @@
         <div class="card ml-5" style="width: 18rem;">
           <img src="static/img/ventaAplle.webp" class="card-img-top" alt="...">
           <div class="card-body">
-            <h5 value=1 id="titulo" class="card-title">Apple AirPods</h5>
+            <h5 id="titulo" class="card-title">Apple AirPods</h5>
           </div>
           <ul class="list-group list-group-flush">
             <li class="list-group-item">$5,999.00</li>
           </ul>
           <div class="card-body">
             <label for="cantidadInput">Cantidad</label>
-            <input id="cantidadInput" type="number" class="form-control mb-1" style="width: 15rem;"  placeholder=1>
-            <a onclick="addItem(titulo.id ,cantidadInput.value)" class="btn btn-primary" style="width: 15rem;">Agregar al
-              carrito<span class="material-icons">
-                add_shopping_cart
-              </span> </a>
+            <form action="">
+
+              <input id="cantidadInput" name="cantidadInput" type="number" class="form-control mb-1" style="width: 15rem;"  placeholder=1>
+              <a onclick="addItem(document.getElementById('cantidadInput').value)" class="btn btn-primary" style="width: 15rem;">Agregar al
+                carrito<span class="material-icons">
+                  add_shopping_cart
+                </span> </a>
+            </form>
           </div>
         </div>
       </div>

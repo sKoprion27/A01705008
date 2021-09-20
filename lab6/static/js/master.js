@@ -151,11 +151,8 @@ function print(value){
 ];
 
 
-function addItem(Nombre, cantidad){
-    console.log("nombre: "+Nombre);
-    const found = Productos.find(element => element == Nombre);
-    console.log("encontrado: " + found);
-    console.log("cantidad: "+ cantidad);
+function addItem(cantidad){
+    console.log("nombre: "+ cantidad);
     
 }
 
