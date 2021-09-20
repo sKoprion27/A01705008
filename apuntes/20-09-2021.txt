@@ -1,3 +1,6 @@
 20-09-2021
 
 --save-dev comando para limitar la instacion por medio del nmp, es unicamente pra le enteorno de desarrollo 
+
+
+"start": "nodemon app.js" reconosca todos esos paramatros como script
