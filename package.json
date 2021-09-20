@@ -1,0 +1,26 @@
+{
+  "name": "bloque1",
+  "version": "1.0.0",
+  "description": "Laboratorios del bloque 1 ago-dic 2021",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sKoprion27/A01705008.git"
+  },
+  "keywords": [
+    "daw"
+  ],
+  "author": "Julio Ramírez",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sKoprion27/A01705008/issues"
+  },
+  "homepage": "https://github.com/sKoprion27/A01705008#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.12"
+  }
+}
