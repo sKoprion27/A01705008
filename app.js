@@ -25,7 +25,7 @@ app.use('/ruta', (request, response, next) => {
 
 app.use((request, response, next) => {
     console.log('Ultimo middleware!');
-    response.send('¡Hola mundo!'); //Manda la respuesta
+    response.send('Not found 404'); //Manda la respuesta
 });
         
 
