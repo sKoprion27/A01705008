@@ -6,6 +6,12 @@ const misRutas = require('./routes/menu');
 const path = require('path');
 //Middleware
 
+//a la variable view engine vale ejs
+app.set('view engine', 'ejs'); 
+//a la variable views vale views
+app.set('views', 'views');
+
+//poner la carpeta public para que pueda ser devuelta de manera estatica
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(bodyParser.urlencoded({extended: false}));
