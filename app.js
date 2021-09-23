@@ -3,6 +3,7 @@ const app = express();
 const bodyParser = require('body-parser');
 const misRutas = require('./routes/menu');
 
+const path = require('path');
 //Middleware
 
 app.use(bodyParser.urlencoded({extended: false}));
@@ -13,6 +14,10 @@ app.use((request, response, next) => {
     next();
 } );
 
+app.get('/password', (request, response, next) => {
+    response.sendFile(path.join(__dirname, 'views', 'passwordValidator.html'));
+});
+        
 
 app.use('/ruta/apellidos', (request, response, next) => {
     response.send('Respuesta de la ruta "/ruta/apellidos"'); 
