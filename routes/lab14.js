@@ -36,11 +36,15 @@ lab14.route('/addMaestre')
         });
     })
     .post(function (request, response){
+        CrearArr(path)
         path = 'public/txt/Maestros.txt';
         agregarDatoTxt(request.body.nombreMaestro, path)
         // console.log(request.body.nombreMaestro)
-        response.send("Maestre agregado")
-
+        
+            response.render('addMaestre', {
+                Titulo: "Agregar Maestre",
+                Lista_maestros: Maestros
+            });
     })
  
 
@@ -68,12 +72,13 @@ function agregarDatoTxt(content, path){
 }
 
 function CrearArr(path){
-    // console.log("entra")
+    // Pasa los tados del txt ubicado en path a la variable data
     fs.readFile(path, 'utf8' , (err, data) => {
         if (err) {
           console.error(err)
           return
         }
+        // divide apartir de que encuentre el caracter de salto de linea y los va a gregando a un arreglo
         Maestros = Array.from(data.split("\n"));
         console.log(Maestros)
       })
