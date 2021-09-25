@@ -3,7 +3,7 @@ const lab14 = express.Router();
 
 
 // rutas
-lab14.get('/homepage', (request, response, next) => {
+lab14.get('/', (request, response, next) => {
     response.render('homepagelab14', {
         Titulo: "Bienvenido"
     });
@@ -21,29 +21,41 @@ lab14.get('/addMateria', (request, response, next) => {
     });
 });
 
-lab14.get('/addMaestre', (request, response, next) => {
-    response.render('addMaestro', {
-        Titulo: "Agregar Maestre"
+
+
+lab14.route('/addMaestre')
+    .get(function (request, response) {
+        response.render('addMaestre', {
+            Titulo: "Agregar Maestre"
+        });
+    })
+    .post(function (request, response){
+        path = 'public/txt/Maestros.txt';
+        agregarDatoTxt(request.body.nombreMaestro, path)
+        // console.log(request.body.nombreMaestro)
+        response.send("llega al post")
+    })
+
+
+lab14.get('/listadoTareas', (request, response, next) => {
+    response.render('listadoTareas', {
+        Titulo: "Listado Tareas"
     });
 }); 
 
-lab14.post('/addMaestre', (request, response, next) => {
-    request.on('data', (dato) => {
-        console.log("dato");
-        console.log(dato);
-    });
-    response.send("gracias");
-});
-
-
 
 // fuciones
+
+
 const fs = require('fs')
 
 // funciones para lab 14
-function agregarDatoTxt(content){
+function agregarDatoTxt(content, path){
     console.log(content);
-    fs.writeFile('/txt/Maestros.txt', content, { flag: 'a' }, err => {})
+    fs.appendFile(path, content + "\n" , function (err) {
+    if (err) return console.log(err);
+    console.log(content + " agregado a " + path);
+    });
 
 }
 
