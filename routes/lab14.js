@@ -1,9 +1,14 @@
 const express = require('express');
 const lab14 = express.Router();
 
+const fs = require('fs');
 
 // arreglos
+
 var Maestros = [];
+var Materias = [];
+CrearArrMaestres()
+CrearArrMaterias()
 
 // rutas
 lab14.get('/', (request, response, next) => {
@@ -18,30 +23,40 @@ lab14.get('/addTarea', (request, response, next) => {
     });
 });
 
-lab14.get('/addMateria', (request, response, next) => {
+lab14.route('/addMateria')
+    .get(function (request, response){ 
+    CrearArrMaterias()
     response.render('addMateria', {
-        Titulo: "Agregar Materia"
+        Titulo: "Agregar Materia",
+        Lista_maestros: Maestros,
+        Lista_materias: Materias
     });
+})
+    .post(function (request, response){
+        path = 'public/txt/Materias.txt';
+        agregarDatoTxt(request.body.nombreMateria + '&' + request.body.Maestro, path)
+        // console.log(request.body)
+        response.render('addMateria', {
+            Titulo: "Agregar Materia",
+            Lista_maestros: Maestros,
+            Lista_materias: Materias
+        })
 });
 
 
 
 lab14.route('/addMaestre')
     .get(function (request, response) {
-        path = 'public/txt/Maestros.txt';
-        CrearArr(path)
+        CrearArrMaestres()
         response.render('addMaestre', {
             Titulo: "Agregar Maestre",
             Lista_maestros: Maestros
         });
     })
     .post(function (request, response){
-        CrearArr(path)
-        path = 'public/txt/Maestros.txt';
-        agregarDatoTxt(request.body.nombreMaestro, path)
-        // console.log(request.body.nombreMaestro)
-        
-            response.render('addMaestre', {
+        path = 'public/txt/Maestres.txt'
+        agregarDatoTxt(request.body.nombreMaestro, path)        
+        response.render('addMaestre', {
                 Titulo: "Agregar Maestre",
                 Lista_maestros: Maestros
             });
@@ -55,14 +70,8 @@ lab14.get('/listadoTareas', (request, response, next) => {
 }); 
 
 
-// fuciones
-
-
-const fs = require('fs');
-
 // funciones para lab 14
 function agregarDatoTxt(content, path){
-    console.log(content);
     // abre el archivo ubicado en path, y agrega el contenico con un \n al inicio para hacer salto de linea
     fs.appendFile(path,"\n"  + content, function (err) {
     if (err) return console.log(err);
@@ -71,16 +80,32 @@ function agregarDatoTxt(content, path){
 
 }
 
-function CrearArr(path){
+function CrearArrMaestres(){
     // Pasa los tados del txt ubicado en path a la variable data
-    fs.readFile(path, 'utf8' , (err, data) => {
+    fs.readFile('public/txt/Maestres.txt', 'utf8' , (err, data) => {
         if (err) {
           console.error(err)
           return
         }
         // divide apartir de que encuentre el caracter de salto de linea y los va a gregando a un arreglo
         Maestros = Array.from(data.split("\n"));
+        console.log("Maestros")
         console.log(Maestros)
+      })
+}
+
+function CrearArrMaterias(){
+    // Pasa los tados del txt ubicado en path a la variable data
+    fs.readFile('public/txt/Materias.txt', 'utf8' , (err, data) => {
+        if (err) {
+          console.error(err)
+          return
+        }
+        // divide apartir de que encuentre el caracter de salto de linea y los va a gregando a un arreglo
+        Materias = Array.from(data.split("\n"));
+        console.log("Materias")
+        console.log(Materias)
+
       })
 }
 
