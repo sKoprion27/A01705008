@@ -17,21 +17,29 @@ lab14.get('/', (request, response, next) => {
     });
 });
 
-lab14.get('/addTarea', (request, response, next) => {
-    response.render('addTarea', {
-        Titulo: "Agregar Tarea"
-    });
-});
+lab14.route('/addTarea')
+    .get(function (request, response) {
+        response.render('addTarea', {
+            Titulo: "Agregar Tarea",
+            Lista_materias: Materias
+        });
+    })
+    .post(function (request, response){
+        console.log("entra")
+        path = 'public/txt/Tareas.txt';
+        agregarDatoTxt(request.body.nombreTarea + ':' + request.body.Materia + ':' + request.body.descripcionTarea + ':' +  request.body.fechaLimite, path)
+        
+    })
 
 lab14.route('/addMateria')
     .get(function (request, response){ 
-    CrearArrMaterias()
-    response.render('addMateria', {
-        Titulo: "Agregar Materia",
-        Lista_maestros: Maestros,
-        Lista_materias: Materias
-    });
-})
+        CrearArrMaterias()
+        response.render('addMateria', {
+            Titulo: "Agregar Materia",
+            Lista_maestros: Maestros,
+            Lista_materias: Materias
+        });
+    })
     .post(function (request, response){
         path = 'public/txt/Materias.txt';
         agregarDatoTxt(request.body.nombreMateria + '&' + request.body.Maestro, path)
@@ -41,7 +49,7 @@ lab14.route('/addMateria')
             Lista_maestros: Maestros,
             Lista_materias: Materias
         })
-});
+    });
 
 
 
@@ -65,10 +73,12 @@ lab14.route('/addMaestre')
 
 lab14.get('/listadoTareas', (request, response, next) => {
     response.render('listadoTareas', {
-        Titulo: "Listado Tareas"
+        Titulo: "Listado Tareas",
+        Lista_materias: Materias
+
     });
 }); 
-
+ 
 
 // funciones para lab 14
 function agregarDatoTxt(content, path){
@@ -89,8 +99,8 @@ function CrearArrMaestres(){
         }
         // divide apartir de que encuentre el caracter de salto de linea y los va a gregando a un arreglo
         Maestros = Array.from(data.split("\n"));
-        console.log("Maestros")
-        console.log(Maestros)
+        // console.log("Maestros")
+        // console.log(Maestros)
       })
 }
 
@@ -103,8 +113,8 @@ function CrearArrMaterias(){
         }
         // divide apartir de que encuentre el caracter de salto de linea y los va a gregando a un arreglo
         Materias = Array.from(data.split("\n"));
-        console.log("Materias")
-        console.log(Materias)
+        // console.log("Materias")
+        // console.log(Materias)
 
       })
 }
