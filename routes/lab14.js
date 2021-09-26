@@ -7,8 +7,10 @@ const fs = require('fs');
 
 var Maestros = [];
 var Materias = [];
+var Tareas = [];
 CrearArrMaestres()
 CrearArrMaterias()
+CrearArrTareas()
 
 // rutas
 lab14.get('/', (request, response, next) => {
@@ -28,7 +30,12 @@ lab14.route('/addTarea')
         console.log("entra")
         path = 'public/txt/Tareas.txt';
         agregarDatoTxt(request.body.nombreTarea + ':' + request.body.Materia + ':' + request.body.descripcionTarea + ':' +  request.body.fechaLimite, path)
-        
+        CrearArrTareas()
+        response.render('listadoTareas', {
+            Titulo: "Listado Tareas",
+            Lista_Tareas: Tareas
+    
+        });
     })
 
 lab14.route('/addMateria')
@@ -72,9 +79,13 @@ lab14.route('/addMaestre')
  
 
 lab14.get('/listadoTareas', (request, response, next) => {
+    CrearArrTareas()
+    var date = Date().toString();
+     
     response.render('listadoTareas', {
         Titulo: "Listado Tareas",
-        Lista_materias: Materias
+        Lista_Tareas: Tareas,
+        dateNow: date.substring(0,15)
 
     });
 }); 
@@ -115,6 +126,21 @@ function CrearArrMaterias(){
         Materias = Array.from(data.split("\n"));
         // console.log("Materias")
         // console.log(Materias)
+
+      })
+}
+
+function CrearArrTareas(){
+    // Pasa los tados del txt ubicado en path a la variable data
+    fs.readFile('public/txt/Tareas.txt', 'utf8' , (err, data) => {
+        if (err) {
+          console.error(err)
+          return
+        }
+        // divide apartir de que encuentre el caracter de salto de linea y los va a gregando a un arreglo
+        Tareas = Array.from(data.split("\n"));
+        // console.log("Tareas")
+        // console.log(Tareas)
 
       })
 }
