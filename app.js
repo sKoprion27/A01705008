@@ -1,7 +1,9 @@
 const express = require('express');
 const app = express();
+
 const bodyParser = require('body-parser');
 const misRutas = require('./routes/menu');
+const rutasLab14 = require('./routes/lab14');
 
 const path = require('path');
 //Middleware
@@ -15,7 +17,10 @@ app.set('views', 'views');
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(bodyParser.urlencoded({extended: false}));
+
 app.use('/menu', misRutas);
+
+app.use('/lab14', rutasLab14);
 
 app.use((request, response, next) => {
     console.log('Primer Middleware!');
@@ -24,6 +29,7 @@ app.use((request, response, next) => {
 
 app.get('/password', (request, response, next) => {
     response.sendFile(path.join(__dirname, 'views', 'passwordValidator.html'));
+    next();
 });
         
 
