@@ -3,28 +3,10 @@ const router = express.Router();
 
 const menuControlller = require('../controllers/menu_controller')
 
-router.get('/list',  menuControlller.list)
+router.get('/list',  menuControlller.getlist);
 
-router.get('/add', (request, response, next) => {
-    let respuesta = '<head><meta charset="UTF-8"></head>';
-        respuesta +='<h1>Agregar platillo al menú</h1>';
-        respuesta +='<form action="/add" method="POST">';
-        respuesta +='<label for="nombre">Nombre del platillo</label>';
-        respuesta +='<input type="text" id="nombre" name="nombre" placeholder="Tacos" required>';
-        respuesta +='<br>';
-        respuesta +='<br>';
-        respuesta +='<label for="descripcion">Descripcion del platillo</label>';
-        respuesta +='<input type="text" id="descripcion" name="descripcion" placeholder="Tortilla, carne, salsa" required>';
-        respuesta +='<br>';
-        respuesta +='<br>';
-        respuesta +='<input type="submit" id="enviar" name="name" value="Enviar">';
-        respuesta +='</form>';
-        response.send(respuesta);
-});
+router.get('/add', menuControlller.getadd);
 
-router.post('/add', (request, response, next) => {
-    console.log(request.body);
-    console.log(request.body.nombre);
-    response.send("gracias");
-});
+router.post('/add', menuControlller.postadd);
+
 module.exports = router;
